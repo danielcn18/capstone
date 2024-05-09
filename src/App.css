@@ -7,8 +7,7 @@
   --color-primary-transparent: rgba(255, 255, 255, 0.5);
   --bg-primary: black;
   --bg-secondary: rgba(18,18,18,255);
-  --bg-tertiary: rgba(36,36,36,255);
-  
+  --bg-tertiary: rgba(36,36,36,255); 
 }
 
 body {
