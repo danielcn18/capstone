@@ -14,10 +14,9 @@ import Logo from './images/Spotify_Logo_CMYK_White.png';
 function App() {
   return (
     <Router>
-      <div className='p-1.5 w-full h-screen grid gap-1.5' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
-        {/* <div className='inline-flex flex-col min-w-72 max-w-md border-box gap-1.5 row-span-1 col-span-1'> */} {/* Left Half - Static */}
-        <div className='inline-grid grid-cols-1'>
-          <ul className='w-100 inline-flex h-fit flex-col bg-secondary rounded-lg bg-secondary border-box p-4 gap-y-4'>
+      <div className='p-1.5 w-full h-screen grid gap-1.5 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
+        <div className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-1.5 row-span-1 col-span-1'> {/* Left Half - Static */}
+          <ul className='w-full inline-flex h-fit flex-col bg-secondary rounded-lg bg-secondary border-box p-4 gap-y-4'>
         
             <Link to="/dashboard" className='inline-flex max-w-max'>
               <img src={Logo} style={{width: '6rem'}}/>
@@ -36,7 +35,7 @@ function App() {
               </Link>
             </li>
           </ul>
-          <ul className='w-100 inline-flex h-fit flex-col bg-secondary rounded-lg bg-secondary border-box p-2 gap-y-4'>
+          <ul className='w-full grow flex flex-col bg-secondary rounded-lg bg-secondary border-box p-2 gap-y-4'>
             <div className='px-2'>
               <li className='flex flex-row justify-between'>
                 <button className='flex-row inline-flex max-w-max items-center gap-x-5 opacity-60 hover:opacity-100 transition-opacity duration-1000'> 
