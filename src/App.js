@@ -14,9 +14,10 @@ import Logo from './images/Spotify_Logo_CMYK_White.png';
 function App() {
   return (
     <Router>
-      <div className='p-1.5 w-full h-screen grid' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
-        <div className='inline-flex flex-col min-w-72 max-w-md border-box gap-1.5 row-span-1 col-span-1'> {/* Left Half - Static */}
-          <ul className='w-100 flex flex-col bg-secondary rounded-lg bg-secondary border-box p-4 gap-y-4'>
+      <div className='p-1.5 w-full h-screen grid gap-1.5' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
+        {/* <div className='inline-flex flex-col min-w-72 max-w-md border-box gap-1.5 row-span-1 col-span-1'> */} {/* Left Half - Static */}
+        <div className='inline-grid grid-cols-1'>
+          <ul className='w-100 inline-flex h-fit flex-col bg-secondary rounded-lg bg-secondary border-box p-4 gap-y-4'>
         
             <Link to="/dashboard" className='inline-flex max-w-max'>
               <img src={Logo} style={{width: '6rem'}}/>
@@ -35,7 +36,7 @@ function App() {
               </Link>
             </li>
           </ul>
-          <ul className='w-100 flex flex-col bg-secondary rounded-lg bg-secondary border-box p-2 gap-y-4'>
+          <ul className='w-100 inline-flex h-fit flex-col bg-secondary rounded-lg bg-secondary border-box p-2 gap-y-4'>
             <div className='px-2'>
               <li className='flex flex-row justify-between'>
                 <button className='flex-row inline-flex max-w-max items-center gap-x-5 opacity-60 hover:opacity-100 transition-opacity duration-1000'> 
@@ -79,7 +80,7 @@ function App() {
             </section>
           </ul>
         </div>
-        <div className='inline-flex flex-col border-box p-1.5 gap-1.5 row-span-1 col-start-2 col-end-3 h-10 w-full bg-white'> {/* Right Half - Home, Search, Library */}
+        <div className='inline-flex flex-col border-box p-1.5 gap-1.5 row-span-1 col-start-2 col-end-3 h-full w-full bg-white rounded-lg'> {/* Right Half - Home, Search, Library */}
         </div>
         <footer className='grid col-start-1 col-end-3 row-start-2 w-full h-16 bg-green-700'> {/* Footer */}
           <p className='text-black'>Hello World</p>
