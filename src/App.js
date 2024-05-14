@@ -14,10 +14,10 @@ import Logo from './images/Spotify_Logo_CMYK_White.png';
 function App() {
   return (
     <Router>
-      <div className='w-full h-screen flex flex-nowrap'>
-        <div className='inline-flex flex-col min-w-72 max-w-md border-box p-1.5 gap-1.5 fixed'> {/* Left Half - Static */}
+      <div className='p-1.5 w-full h-screen grid' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
+        <div className='inline-flex flex-col min-w-72 max-w-md border-box gap-1.5 row-span-1 col-span-1'> {/* Left Half - Static */}
           <ul className='w-100 flex flex-col bg-secondary rounded-lg bg-secondary border-box p-4 gap-y-4'>
-          
+        
             <Link to="/dashboard" className='inline-flex max-w-max'>
               <img src={Logo} style={{width: '6rem'}}/>
             </Link>
@@ -79,10 +79,11 @@ function App() {
             </section>
           </ul>
         </div>
-        <div className='inline-flex flex-col border-box p-1.5 gap-1.5'> {/* Right Half - Home, Search, Library */}
-
+        <div className='inline-flex flex-col border-box p-1.5 gap-1.5 row-span-1 col-start-2 col-end-3 h-10 w-full bg-white'> {/* Right Half - Home, Search, Library */}
         </div>
-        
+        <footer className='grid col-start-1 col-end-3 row-start-2 w-full h-16 bg-green-700'> {/* Footer */}
+          <p className='text-black'>Hello World</p>
+        </footer>
         {/* <Link to="/dashboard">Home</Link> */}
 
         {/* <Routes> 
