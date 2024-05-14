@@ -47,7 +47,7 @@ function App() {
                 </button>
               </li>
             </div>
-            <div className='pb-20 flex flex-col gap-y-4'>
+            <div className='pb-10 flex flex-col gap-y-4'>
               <section className='flex w-full flex-col bg-neutral-800 rounded-lg border-box p-4 gap-y-5'>
                 <div>
                   <p className='text-base font-medium'>Create your first playlist</p>
@@ -67,6 +67,16 @@ function App() {
                 </button>
               </section>
             </div>
+            <section className='my-9 px-2 flex flex-row flex-wrap w-full gap-y-3'>
+              <p className='mr-5 text-xs opacity-70'>Legal</p>
+              <p className='mr-5 text-xs opacity-70'>Safety & Privacy Center</p>
+              <p className='mr-5 text-xs opacity-70'>Privacy Policy</p>
+              <p className='mr-5 text-xs opacity-70'>Cookies</p>
+              <p className='mr-5 text-xs opacity-70'>About Ads</p>
+              <p className='mr-5 text-xs opacity-70'>Accessibility</p>
+              <p className='mr-5 text-xs opacity-70'>Notice at Collection</p>
+              <p className='mr-5 text-xs opacity-70'>Your Privacy Choices</p>
+            </section>
           </ul>
         </div>
         <div className='inline-flex flex-col border-box p-1.5 gap-1.5'> {/* Right Half - Home, Search, Library */}
