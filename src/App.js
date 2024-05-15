@@ -3,6 +3,7 @@ import { GoHomeFill } from "react-icons/go";
 import { GoSearch } from "react-icons/go";
 import { IoLibrarySharp } from "react-icons/io5";
 import { GoPlus } from "react-icons/go";
+import { TbWorld } from "react-icons/tb";
 import { 
   BrowserRouter as Router, 
   Routes, 
@@ -14,9 +15,9 @@ import Logo from './images/Spotify_Logo_CMYK_White.png';
 function App() {
   return (
     <Router>
-      <div className='p-1.5 w-full h-screen grid gap-1.5 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
-        <div className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-1.5 row-span-1 col-span-1'> {/* Left Half - Static */}
-          <ul className='w-full inline-flex h-fit flex-col bg-secondary rounded-lg bg-secondary border-box p-4 gap-y-4'>
+      <div className='p-2 w-full h-screen grid gap-2 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto 1fr"}}>
+        <div className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-2 row-span-1 col-span-1'> {/* Left Half - Static */}
+          <ul className='w-full inline-flex h-fit flex-col bg-secondary rounded-lg border-box p-4 gap-y-4'>
         
             <Link to="/dashboard" className='inline-flex max-w-max'>
               <img src={Logo} style={{width: '6rem'}}/>
@@ -47,9 +48,9 @@ function App() {
                 </button>
               </li>
             </div>
-            <div className='pb-10 flex flex-col gap-y-4'>
+            <div className='mb-10 flex flex-col gap-y-4 overflow-y-auto max-h-40'> {/* max-h-72 */}
               <section className='flex w-full flex-col bg-neutral-800 rounded-lg border-box p-4 gap-y-5'>
-                <div>
+                <div className='flex flex-col gap-y-1.5'>
                   <p className='text-base font-medium'>Create your first playlist</p>
                   <p className='text-sm font-medium'>It's easy, we'll help you</p>
                 </div>
@@ -58,7 +59,7 @@ function App() {
                 </button>
               </section>
               <section className='flex w-full flex-col bg-neutral-800 rounded-lg border-box p-4 gap-y-5'>
-                <div>
+                <div className='flex flex-col gap-y-1.5'>
                   <p className='text-base font-medium'>Let's find some podcasts to follow</p>
                   <p className='text-sm font-medium'>We'll keep you updated on new episodes</p>
                 </div>
@@ -67,27 +68,42 @@ function App() {
                 </button>
               </section>
             </div>
-            <section className='my-9 px-2 flex flex-row flex-wrap w-full gap-y-3'>
-              <p className='mr-5 text-xs opacity-70'>Legal</p>
-              <p className='mr-5 text-xs opacity-70'>Safety & Privacy Center</p>
-              <p className='mr-5 text-xs opacity-70'>Privacy Policy</p>
-              <p className='mr-5 text-xs opacity-70'>Cookies</p>
-              <p className='mr-5 text-xs opacity-70'>About Ads</p>
-              <p className='mr-5 text-xs opacity-70'>Accessibility</p>
-              <p className='mr-5 text-xs opacity-70'>Notice at Collection</p>
-              <p className='mr-5 text-xs opacity-70'>Your Privacy Choices</p>
-            </section>
+            <div className='w-full my-9 px-4'>
+              <section className='flex flex-row flex-wrap gap-y-3'>
+                <p className='mr-5 text-xs opacity-70'>Legal</p>
+                <p className='mr-5 text-xs opacity-70'>Safety & Privacy Center</p>
+                <p className='mr-5 text-xs opacity-70'>Privacy Policy</p>
+                <p className='mr-5 text-xs opacity-70'>Cookies</p>
+                <p className='mr-5 text-xs opacity-70'>About Ads</p>
+                <p className='mr-5 text-xs opacity-70'>Accessibility</p>
+                <p className='mr-5 text-xs opacity-70'>Notice at Collection</p>
+                <p className='mr-5 text-xs opacity-70'>Your Privacy Choices</p>
+              </section>
+              <a className='text-xs opacity-70 hover:underline'>Cookies</a>
+            </div>
+            <div className='w-full px-4'>
+              <button className='flex flex-row items-center border border-opacity-50 border-white rounded-full gap-x-0.5 px-3 py-1 hover:scale-105 hover:border-opacity-100'>
+                <TbWorld className='text-xl' />
+                <p className='text-sm font-bold'>English</p>
+              </button>
+            </div>
           </ul>
         </div>
-        <div className='inline-flex flex-col border-box p-1.5 gap-1.5 row-span-1 col-start-2 col-end-3 h-full w-full bg-white rounded-lg'> {/* Right Half - Home, Search, Library */}
+        <div className='bg-secondary inline-flex flex-col border-box p-1.5 gap-1.5 row-span-1 col-start-2 col-end-3 h-full w-full bg-white rounded-lg'> {/* Right Half - Home, Search, Library */}
         </div>
-        <footer className='grid col-start-1 col-end-3 row-start-2 w-full h-16 bg-green-700'> {/* Footer */}
-          <p className='text-black'>Hello World</p>
+        <footer className='flex justify-between col-start-1 col-end-3 row-start-2 w-full h-16 bg-green-700 bg-gradient-to-r from-warm-purple-100 to-cornflower-blue text-white py-2 px-3 border-box'> {/* Footer */}
+          <div className='inline-flex flex-col'>
+            <p className='text-sm font-bold'>Preview of Spotify</p>
+            <p className='text-base font-medium'>Sign up to get unlimited songs and podcasts with occasional ads. No credit cards needed.</p>
+          </div>
+          <button className='h-full w-auto bg-white px-5 rounded-full hover:opacity-90 hover:'>
+            <p className='font-base font-semibold text-black'>Sign up free</p>
+          </button>
         </footer>
         {/* <Link to="/dashboard">Home</Link> */}
 
         {/* <Routes> 
-          <Route path="/dashboard" element={<Home />} /> 
+          <Route path="/dashboard" element={<Home />} />   
           <Route path="/library" element={<Library />} /> 
           <Route path="/search" element={<Search />} /> 
         </Routes> */}
