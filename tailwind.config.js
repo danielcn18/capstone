@@ -11,9 +11,17 @@ module.exports = {
         },
         'cornflower-blue': '#5495fd', 
         'blue-marguerite': '#8567C3',
-      }
+        'smokey-grey': '#727272',
+      },
+      height: {
+        'middleScrollbarHeight': '97%',
+      },
+    },
+  },
+  variants: {
+    extend: {
+      
     },
   },
   plugins: [],
 }
-
