@@ -93,8 +93,12 @@ function App() {
         <div className='bg-secondary grid gap-1.5 row-span-1 col-start-3 col-end-4 h-full w-full rounded-lg overflow-hidden' style={{gridTemplateRows: "auto 1fr"}}> {/* Right Half - Home, Search, Library */}
           <header className='w-full h-16 bg-black flex justify-between items-center border-box p-4 bg-gradient-to-r from-onyx-100 to-onyx-200'>
             <div className='inline-flex gap-x-2'>
-              <button>Back</button>
-              <button>Forward</button>
+              <button>Back
+                {/* Insert Icon */}
+              </button>
+              <button>Forward
+                {/* Insert Icon */}
+              </button>
             </div>
             <div className='inline-flex gap-x-6 items-center'>
               <Link to="/" className='text-base font-bold opacity-70 hover:opacity-100 hover:scale-105'>Sign up</Link>
