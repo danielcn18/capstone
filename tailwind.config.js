@@ -12,6 +12,12 @@ module.exports = {
         'cornflower-blue': '#5495fd', 
         'blue-marguerite': '#8567C3',
         'smokey-grey': '#727272',
+        'onyx': {
+          100: '#101010',
+          200: '#111111',
+          300: '#121212',
+        },
+        'dark-jungle-green': '#1f1f1f',
       },
       height: {
         'middleScrollbarHeight': '97%',
