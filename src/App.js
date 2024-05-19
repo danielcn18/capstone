@@ -36,7 +36,7 @@ function App() {
               </Link>
             </li>
           </ul>
-          <ul className='w-full grow flex flex-col bg-secondary rounded-lg bg-secondary border-box p-2 gap-y-4'>
+          <ul className='w-full grow flex flex-col bg-secondary rounded-lg bg-secondary border-box p-2 justify-between'> {/* gap-y-4 */}
             <div className='px-2'>
               <li className='flex flex-row justify-between'>
                 <button className='flex-row inline-flex max-w-max items-center gap-x-5 opacity-60 hover:opacity-100 transition-opacity duration-1000'> 
@@ -48,7 +48,7 @@ function App() {
                 </button>
               </li>
             </div>
-            <div className='mb-10 flex flex-col gap-y-4 overflow-y-auto max-h-72'> {/* max-h-72 */}
+            <div className='mb-6 flex flex-col gap-y-4 overflow-y-auto max-h-72'> {/* max-h-72 */}
               <section className='flex w-full flex-col bg-neutral-800 rounded-lg border-box p-4 gap-y-5'>
                 <div className='flex flex-col gap-y-1.5'>
                   <p className='text-base font-medium'>Create your first playlist</p>
@@ -68,7 +68,7 @@ function App() {
                 </button>
               </section>
             </div>
-            <div className='w-full my-7 px-4'>
+            <div className='w-full my-5 px-4'>
               <section className='flex flex-row flex-wrap gap-y-3'>
                 <p className='mr-5 text-xs opacity-70'>Legal</p>
                 <p className='mr-5 text-xs opacity-70'>Safety & Privacy Center</p>
@@ -81,7 +81,7 @@ function App() {
               </section>
               <a className='text-xs opacity-70 hover:underline'>Cookies</a>
             </div>
-            <div className='w-full px-4'>
+            <div className='w-full px-4 pb-4'>
               <button className='flex flex-row items-center border border-opacity-50 border-white rounded-full gap-x-0.5 px-3 py-1 hover:scale-105 hover:border-opacity-100'>
                 <TbWorld className='text-xl' />
                 <p className='text-sm font-bold'>English</p>
