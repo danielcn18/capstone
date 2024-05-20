@@ -10,13 +10,36 @@ import {
   Route, 
   Link, 
 } from "react-router-dom";
+import React, { useState, useRef } from 'react';
 import Logo from './images/Spotify_Logo_CMYK_White.png';
 
 function App() {
+  const [xPos, setXPos] = useState(448); 
+  const columnRef = useRef(null); 
+  const scrollRef = useRef(null);
+
+  const mouseUp = (e) => {
+    scrollRef.current.classList.remove('after-bg');
+  }
+
+  const mouseDown = (e) => {
+    scrollRef.current.classList.add('after-bg');
+    const mouseX = e.clientWidth;
+    setXPos() /* set to mousePos minus the previous xPos */
+  }
+
+  useState(() => {
+    
+  }, []);
+
   return (
     <Router>
       <div className='p-2 w-full h-screen grid gap-y-2 gap-x-0.5 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto auto 1fr"}}>
-        <div className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-2 row-span-1 col-span-1'> {/* Left Half - Static */}
+        <div 
+          className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-2 row-span-1 col-span-1' 
+          style={{width: `${xPos}px`}}
+          ref={columnRef}
+        > {/* Left Half - Static */}
           <ul className='w-full inline-flex h-fit flex-col bg-secondary rounded-lg border-box p-4 gap-y-4'>
         
             <Link to="/dashboard" className='inline-flex max-w-max'>
@@ -37,7 +60,7 @@ function App() {
             </li>
           </ul>
           <ul className='w-full grow flex flex-col bg-secondary rounded-lg bg-secondary border-box p-2 justify-between'> {/* gap-y-4 */}
-            <div className='px-2'>
+            <div className='px-2 mb-2'>
               <li className='flex flex-row justify-between'>
                 <button className='flex-row inline-flex max-w-max items-center gap-x-5 opacity-60 hover:opacity-100 transition-opacity duration-1000'> 
                   <IoLibrarySharp style={{fontSize: '2rem'}} />
@@ -68,7 +91,7 @@ function App() {
                 </button>
               </section>
             </div>
-            <div className='w-full my-5 px-4'>
+            <div className='w-full mb-5 px-4'>
               <section className='flex flex-row flex-wrap gap-y-3'>
                 <p className='mr-5 text-xs opacity-70'>Legal</p>
                 <p className='mr-5 text-xs opacity-70'>Safety & Privacy Center</p>
@@ -89,7 +112,12 @@ function App() {
             </div>
           </ul>
         </div>
-        <div className='inline-flex row-span-1 col-start-2 col-end-3 w-0.5 h-full relative after:content-[""] after:absolute after:top-1/2 after:-translate-y-1/2 after:absolute after:-left-0 after:hover:bg-smokey-grey after:w-0.5 after:rounded-lg after:h-middleScrollbarHeight' /> {/* after:bg-white */}
+        <div 
+          className='inline-flex row-span-1 col-start-2 col-end-3 w-0.5 h-full relative after:content-[""] after:absolute after:top-1/2 after:-translate-y-1/2 after:absolute after:-left-0 after:hover:bg-smokey-grey after:w-0.5 after:rounded-lg after:h-middleScrollbarHeight' 
+          onMouseDown={mouseDown}
+          onMouseUp={mouseUp}
+          ref={scrollRef}
+        /> {/* after:bg-white */}
         <div className='bg-secondary grid gap-1.5 row-span-1 col-start-3 col-end-4 h-full w-full rounded-lg overflow-hidden' style={{gridTemplateRows: "auto 1fr"}}> {/* Right Half - Home, Search, Library */}
           <header className='w-full h-16 bg-black flex justify-between items-center border-box p-4 bg-gradient-to-r from-onyx-100 to-onyx-200'>
             <div className='inline-flex gap-x-2'>
