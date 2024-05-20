@@ -14,7 +14,8 @@ import React, { useState, useRef } from 'react';
 import Logo from './images/Spotify_Logo_CMYK_White.png';
 
 function App() {
-  const [xPos, setXPos] = useState(448); 
+  const [columnX, setColumnX] = useState(448); 
+  const [isActive, setIsActive] = useState(false);
   const columnRef = useRef(null); 
   const scrollRef = useRef(null);
 
@@ -23,9 +24,10 @@ function App() {
   }
 
   const mouseDown = (e) => {
-    scrollRef.current.classList.add('after-bg');
-    const mouseX = e.clientWidth;
-    setXPos() /* set to mousePos minus the previous xPos */
+    
+    // scrollRef.current.classList.add('after-bg');
+    // const mouseX = e.clientWidth;
+    // setColumnX(); /* set to mousePos minus the previous columnX */
   }
 
   useState(() => {
@@ -34,10 +36,10 @@ function App() {
 
   return (
     <Router>
-      <div className='p-2 w-full h-screen grid gap-y-2 gap-x-0.5 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto auto 1fr"}}>
+      <div className='p-2 w-full h-screen grid gap-y-2 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto auto 1fr"}}>
         <div 
           className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-2 row-span-1 col-span-1' 
-          style={{width: `${xPos}px`}}
+          style={{width: `${columnX}px`}}
           ref={columnRef}
         > {/* Left Half - Static */}
           <ul className='w-full inline-flex h-fit flex-col bg-secondary rounded-lg border-box p-4 gap-y-4'>
@@ -112,12 +114,18 @@ function App() {
             </div>
           </ul>
         </div>
-        <div 
+        {/* <div 
           className='inline-flex row-span-1 col-start-2 col-end-3 w-0.5 h-full relative after:content-[""] after:absolute after:top-1/2 after:-translate-y-1/2 after:absolute after:-left-0 after:hover:bg-smokey-grey after:w-0.5 after:rounded-lg after:h-middleScrollbarHeight' 
           onMouseDown={mouseDown}
           onMouseUp={mouseUp}
           ref={scrollRef}
-        /> {/* after:bg-white */}
+        /> */} {/* after:bg-white */}
+        <div 
+          className='inline-flex relative row-span-1 col-start-2 col-end-3 w-1.5 after:w-0.5 h-full after:h-middleScrollbarHeight after:content-[""] after:absolute after:top-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:absolute after:left-1/2 after:hover:bg-smokey-grey after:rounded-lg' 
+          onMouseDown={mouseDown}
+          onMouseUp={mouseUp}
+          ref={scrollRef} 
+        />
         <div className='bg-secondary grid gap-1.5 row-span-1 col-start-3 col-end-4 h-full w-full rounded-lg overflow-hidden' style={{gridTemplateRows: "auto 1fr"}}> {/* Right Half - Home, Search, Library */}
           <header className='w-full h-16 bg-black flex justify-between items-center border-box p-4 bg-gradient-to-r from-onyx-100 to-onyx-200'>
             <div className='inline-flex gap-x-2'>
