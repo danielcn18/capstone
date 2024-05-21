@@ -29,6 +29,10 @@ body {
   transform: scale(1.05);
 } */
 
+.middle-dot::after {
+  content: " \2219 "; /* Unicode for middle dot */
+}
+
 li {
   list-style-type: none;
 }
