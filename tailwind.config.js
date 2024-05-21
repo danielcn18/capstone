@@ -18,6 +18,10 @@ module.exports = {
           300: '#121212',
         },
         'dark-jungle-green': '#1f1f1f',
+        'tealish-green': {
+          100: '#27c762',
+          200: '#1fde64',
+        },
       },
       height: {
         'middleScrollbarHeight': '97%',

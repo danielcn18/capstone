@@ -8,6 +8,7 @@ import {
   IoLibrarySharp,
   IoChevronBackOutline,
   IoChevronForward,
+  IoTriangleSharp,
 } from "react-icons/io5";
 import { 
   TbWorld,
@@ -20,6 +21,7 @@ import {
 } from "react-router-dom";
 import React, { useState, useRef } from 'react';
 import Logo from './images/Spotify_Logo_CMYK_White.png';
+import ArtistProfile from './images/kendrick.png';
 
 function App() {
   /* const [columnX, setColumnX] = useState(448); 
@@ -134,7 +136,7 @@ function App() {
           onMouseUp={mouseUp}
           ref={scrollRef} */ 
         />
-        <div className='bg-secondary grid gap-1.5 row-span-1 col-start-3 col-end-4 h-full w-full rounded-lg overflow-hidden' style={{gridTemplateRows: "auto 1fr"}}> {/* Right Half - Home, Search, Library */}
+        <div className='bg-secondary grid gap-1.5 row-span-1 col-start-3 col-end-4 h-full w-full rounded-lg overflow-hidden bg-slate-700 bg-gradient-to-b from-dark-jungle-green to-onyx-300' style={{gridTemplateRows: "auto 1fr"}}> {/* Right Half - Home, Search, Library */}
           <header className='w-full h-16 bg-black flex justify-between items-center border-box py-4 px-8 bg-gradient-to-r from-onyx-100 to-onyx-200'>
             <div className='inline-flex gap-x-2'>
               <button className='rounded-full p-2 bg-black flex justify-center items-center'>
@@ -151,27 +153,109 @@ function App() {
               </span>
             </div>
           </header>
-          <main className='bg-slate-700 bg-gradient-to-b from-dark-jungle-green to-onyx-300'>
+          <main>
             <section className='py-2 border-box'>
               <div className='flex flex-col px-5 gap-y-6'>
-                <section className=''>
+                <section>
                   <div className='flex justify-between mt-7 mb-3'>
                     <h2 className='text-2xl font-bold hover:underline'>
                       <Link to="/" className='h-auto inline-flex items-center'>Popular artists</Link>
                     </h2>
                     <span className='font-bold text-sm opacity-60 flex items-center hover:underline'>
-                      <Link to="/" className='h-auto inline-flex'>
-                        Show all
-                      </Link>
+                      <Link to="/" className='h-auto inline-flex'>Show all</Link>
                     </span>
                   </div>
-                  <div>
-
+                  <div className='grid grid-cols-6 flex-nowrap row-span-1 relative' style={{marginInline: "-0.75rem"}}> 
+                    <div className='card flex gap-y-2 flex-col border-box relative p-3 after:h-full after:w-full after:z-0 after:absolute after:content-[""] after:top-0 after:left-0 after:rounded-md after:hover:bg-dark-jungle-green'> 
+                      <div className='w-full aspect-square z-10 relative'>
+                        <img src={ArtistProfile} alt="artist_img" className='rounded-full' /> 
+                        <div style={{transition: 'visibility 0.1s linear, opacity 0.2s linear, transform 0.2s ease'}} className='card-effect translate-y-2 opacity-0 absolute w-12 aspect-square right-2 bottom-2 bg-tealish-green-100 rounded-full flex justify-center items-center invisible hover:bg-tealish-green-200 hover:scale-105'> {/* I want this whole element to scale(105) when hovered over but it's not working  */}
+                          <IoTriangleSharp className='rotate-90 text-black text-lg' /> {/* if audio avaible: show */} 
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-y-1 z-10'>
+                        <p className='text-base text-white font-medium'>Kendrick Lamar</p>
+                        <p className='text-sm font-normal text-gray-400'>Artist</p>
+                      </div> 
+                    </div>
+                    <div className='card flex gap-y-2 flex-col border-box relative p-3 after:h-full after:w-full after:z-0 after:absolute after:content-[""] after:top-0 after:left-0 after:rounded-md after:hover:bg-dark-jungle-green'> 
+                      <div className='w-full aspect-square z-10 relative'>
+                        <img src={ArtistProfile} alt="artist_img" className='rounded-full' /> 
+                        <div style={{transition: 'visibility 0.1s linear, opacity 0.2s linear, transform 0.2s ease'}} className='card-effect translate-y-2 opacity-0 absolute w-12 aspect-square right-2 bottom-2 bg-tealish-green-100 rounded-full flex justify-center items-center invisible hover:bg-tealish-green-200 hover:scale-105'>
+                          <IoTriangleSharp className='rotate-90 text-black text-lg' /> {/* if audio avaible: show */}
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-y-1 z-10'>
+                        <p className='text-base text-white font-medium'>Kendrick Lamar</p>
+                        <p className='text-sm font-normal text-gray-400'>Artist</p>
+                      </div>
+                    </div>
+                    <div className='card flex gap-y-2 flex-col border-box relative p-3 after:h-full after:w-full after:z-0 after:absolute after:content-[""] after:top-0 after:left-0 after:rounded-md after:hover:bg-dark-jungle-green'> 
+                      <div className='w-full aspect-square z-10 relative'>
+                        <img src={ArtistProfile} alt="artist_img" className='rounded-full' /> 
+                        <div style={{transition: 'visibility 0.1s linear, opacity 0.2s linear, transform 0.2s ease'}} className='card-effect translate-y-2 opacity-0 absolute w-12 aspect-square right-2 bottom-2 bg-tealish-green-100 rounded-full flex justify-center items-center invisible hover:bg-tealish-green-200 hover:scale-105'>
+                          <IoTriangleSharp className='rotate-90 text-black text-lg' /> {/* if audio avaible: show */}
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-y-1 z-10'>
+                        <p className='text-base text-white font-medium'>Kendrick Lamar</p>
+                        <p className='text-sm font-normal text-gray-400'>Artist</p>
+                      </div>
+                    </div>
                   </div>
                 </section>
-                
+
+                <section>
+                  <div className='flex justify-between mt-7 mb-3'>
+                    <h2 className='text-2xl font-bold hover:underline'>
+                      <Link to="/" className='h-auto inline-flex items-center'>Popular artists</Link>
+                    </h2>
+                    <span className='font-bold text-sm opacity-60 flex items-center hover:underline'>
+                      <Link to="/" className='h-auto inline-flex'>Show all</Link>
+                    </span>
+                  </div>
+                  <div className='grid grid-cols-6 flex-nowrap row-span-1 relative' style={{marginInline: "-0.75rem"}}> 
+                    <div className='card flex gap-y-2 flex-col border-box relative p-3 after:h-full after:w-full after:z-0 after:absolute after:content-[""] after:top-0 after:left-0 after:rounded-md after:hover:bg-dark-jungle-green'> 
+                      <div className='w-full aspect-square z-10 relative'>
+                        <img src={ArtistProfile} alt="artist_img" className='rounded-full' /> 
+                        <div style={{transition: 'visibility 0.1s linear, opacity 0.2s linear, transform 0.2s ease'}} className='card-effect translate-y-2 opacity-0 absolute w-12 aspect-square right-2 bottom-2 bg-tealish-green-100 rounded-full flex justify-center items-center invisible hover:bg-tealish-green-200 hover:scale-105'>
+                          <IoTriangleSharp className='rotate-90 text-black text-lg' /> {/* if audio avaible: show */}
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-y-1 z-10'>
+                        <p className='text-base text-white font-medium'>Kendrick Lamar</p>
+                        <p className='text-sm font-normal text-gray-400'>Artist</p>
+                      </div> 
+                    </div>
+                    <div className='card flex gap-y-2 flex-col border-box relative p-3 after:h-full after:w-full after:z-0 after:absolute after:content-[""] after:top-0 after:left-0 after:rounded-md after:hover:bg-dark-jungle-green'> 
+                      <div className='w-full aspect-square z-10 relative'>
+                        <img src={ArtistProfile} alt="artist_img" className='rounded-full' /> 
+                        <div style={{transition: 'visibility 0.1s linear, opacity 0.2s linear, transform 0.2s ease'}} className='card-effect translate-y-2 opacity-0 absolute w-12 aspect-square right-2 bottom-2 bg-tealish-green-100 rounded-full flex justify-center items-center invisible hover:bg-tealish-green-200 hover:scale-105'>
+                          <IoTriangleSharp className='rotate-90 text-black text-lg' /> {/* if audio avaible: show */}
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-y-1 z-10'>
+                        <p className='text-base text-white font-medium'>Kendrick Lamar</p>
+                        <p className='text-sm font-normal text-gray-400'>Artist</p>
+                      </div>
+                    </div>
+                    <div className='card flex gap-y-2 flex-col border-box relative p-3 after:h-full after:w-full after:z-0 after:absolute after:content-[""] after:top-0 after:left-0 after:rounded-md after:hover:bg-dark-jungle-green'> 
+                      <div className='w-full aspect-square z-10 relative'>
+                        <img src={ArtistProfile} alt="artist_img" className='rounded-full' /> 
+                        <div style={{transition: 'visibility 0.1s linear, opacity 0.2s linear, transform 0.2s ease'}} className='card-effect translate-y-2 opacity-0 absolute w-12 aspect-square right-2 bottom-2 bg-tealish-green-100 rounded-full flex justify-center items-center invisible hover:bg-tealish-green-200 hover:scale-105'>
+                          <IoTriangleSharp className='rotate-90 text-black text-lg' /> {/* if audio avaible: show */}
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-y-1 z-10'>
+                        <p className='text-base text-white font-medium'>Kendrick Lamar</p>
+                        <p className='text-sm font-normal text-gray-400'>Artist</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
               </div>
             </section>
+            
           </main>
         </div>
         <footer className='flex justify-between col-start-1 col-end-4 row-start-2 w-full h-16 bg-green-700 bg-gradient-to-r from-warm-purple-100 to-cornflower-blue text-white py-2 px-3 border-box'> {/* Footer */}

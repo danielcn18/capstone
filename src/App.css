@@ -19,6 +19,16 @@ body {
   background-color: white;
 }
 
+.card:hover .card-effect {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+/* .card-effect:hover {
+  transform: scale(1.05);
+} */
+
 li {
   list-style-type: none;
 }
@@ -40,4 +50,3 @@ li {
 .bg-tertiary {
   background-color: var(--bg-tertiary);
 }
-
