@@ -1,9 +1,17 @@
 import './App.css';
-import { GoHomeFill } from "react-icons/go";
-import { GoSearch } from "react-icons/go";
-import { IoLibrarySharp } from "react-icons/io5";
-import { GoPlus } from "react-icons/go";
-import { TbWorld } from "react-icons/tb";
+import { 
+  GoHomeFill,
+  GoSearch,
+  GoPlus,
+} from "react-icons/go";
+import { 
+  IoLibrarySharp,
+  IoChevronBackOutline,
+  IoChevronForward,
+} from "react-icons/io5";
+import { 
+  TbWorld,
+} from "react-icons/tb";
 import { 
   BrowserRouter as Router, 
   Routes, 
@@ -14,7 +22,7 @@ import React, { useState, useRef } from 'react';
 import Logo from './images/Spotify_Logo_CMYK_White.png';
 
 function App() {
-  const [columnX, setColumnX] = useState(448); 
+  /* const [columnX, setColumnX] = useState(448); 
   const [isActive, setIsActive] = useState(false);
   const columnRef = useRef(null); 
   const scrollRef = useRef(null);
@@ -27,8 +35,8 @@ function App() {
     
     // scrollRef.current.classList.add('after-bg');
     // const mouseX = e.clientWidth;
-    // setColumnX(); /* set to mousePos minus the previous columnX */
-  }
+    // setColumnX(); // set to mousePos minus the previous columnX 
+  } */
 
   useState(() => {
     
@@ -39,8 +47,8 @@ function App() {
       <div className='p-2 w-full h-screen grid gap-y-2 items-start' style={{gridTemplateRows: "1fr auto", gridTemplateColumns: "auto auto 1fr"}}>
         <div 
           className='inline-flex h-full flex-col min-w-72 max-w-md border-box gap-2 row-span-1 col-span-1' 
-          style={{width: `${columnX}px`}}
-          ref={columnRef}
+          /* style={{width: `${columnX}px`}} */
+          /* ref={columnRef} */
         > {/* Left Half - Static */}
           <ul className='w-full inline-flex h-fit flex-col bg-secondary rounded-lg border-box p-4 gap-y-4'>
         
@@ -122,18 +130,18 @@ function App() {
         /> */} {/* after:bg-white */}
         <div 
           className='inline-flex relative row-span-1 col-start-2 col-end-3 w-1.5 after:w-0.5 h-full after:h-middleScrollbarHeight after:content-[""] after:absolute after:top-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:absolute after:left-1/2 after:hover:bg-smokey-grey after:rounded-lg' 
-          onMouseDown={mouseDown}
+          /* onMouseDown={mouseDown}
           onMouseUp={mouseUp}
-          ref={scrollRef} 
+          ref={scrollRef} */ 
         />
         <div className='bg-secondary grid gap-1.5 row-span-1 col-start-3 col-end-4 h-full w-full rounded-lg overflow-hidden' style={{gridTemplateRows: "auto 1fr"}}> {/* Right Half - Home, Search, Library */}
-          <header className='w-full h-16 bg-black flex justify-between items-center border-box p-4 bg-gradient-to-r from-onyx-100 to-onyx-200'>
+          <header className='w-full h-16 bg-black flex justify-between items-center border-box py-4 px-8 bg-gradient-to-r from-onyx-100 to-onyx-200'>
             <div className='inline-flex gap-x-2'>
-              <button>Back
-                {/* Insert Icon */}
+              <button className='rounded-full p-2 bg-black flex justify-center items-center'>
+                <IoChevronBackOutline className='text-white opacity-70 text-2xl w-min -translate-x-0.5'/>
               </button>
-              <button>Forward
-                {/* Insert Icon */}
+              <button className='rounded-full p-2 bg-black flex justify-center items-center'>
+                <IoChevronForward className='text-white opacity-70 text-2xl w-min translate-x-0.5'/>
               </button>
             </div>
             <div className='inline-flex gap-x-6 items-center'>
@@ -144,7 +152,26 @@ function App() {
             </div>
           </header>
           <main className='bg-slate-700 bg-gradient-to-b from-dark-jungle-green to-onyx-300'>
+            <section className='py-2 border-box'>
+              <div className='flex flex-col px-5 gap-y-6'>
+                <section className=''>
+                  <div className='flex justify-between mt-7 mb-3'>
+                    <h2 className='text-2xl font-bold hover:underline'>
+                      <Link to="/" className='h-auto inline-flex items-center'>Popular artists</Link>
+                    </h2>
+                    <span className='font-bold text-sm opacity-60 flex items-center hover:underline'>
+                      <Link to="/" className='h-auto inline-flex'>
+                        Show all
+                      </Link>
+                    </span>
+                  </div>
+                  <div>
 
+                  </div>
+                </section>
+                
+              </div>
+            </section>
           </main>
         </div>
         <footer className='flex justify-between col-start-1 col-end-4 row-start-2 w-full h-16 bg-green-700 bg-gradient-to-r from-warm-purple-100 to-cornflower-blue text-white py-2 px-3 border-box'> {/* Footer */}
