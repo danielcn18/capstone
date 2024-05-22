@@ -24,6 +24,7 @@ module.exports = {
         },
         'baltic-sea': '#292929',
         'testing': '#535657',
+        'black-transparent': 'rgba(0,0,0,0.5)',
       },
       height: {
         'middleScrollbarHeight': '97%',

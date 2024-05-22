@@ -29,6 +29,17 @@ body {
   transform: scale(1.05);
 } */
 
+/* .shadow-effect::before {
+  content: "";
+  height: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  box-shadow: 0px 0rem 10rem 10rem rgba(0, 0, 0, 0.5);
+} */
+
 .middle-dot::after {
   content: " \2219 "; /* Unicode for middle dot */
 }
